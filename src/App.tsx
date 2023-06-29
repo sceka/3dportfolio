@@ -1,6 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
 import {
-    About,
     Contact,
     Experience,
     Feedbacks,
@@ -10,6 +9,10 @@ import {
     Works,
     StarsCanvas,
 } from "./components";
+import { SectionWrapper } from "./hoc";
+import About from "./components/About";
+const WrappedAbout = SectionWrapper(About, "about");
+
 function App() {
     return (
         <BrowserRouter>
@@ -18,7 +21,7 @@ function App() {
                     <Navbar />
                     <Hero />
                 </div>
-                <About />
+                {WrappedAbout()}
                 <Experience />
                 <Tech />
                 <Works />
